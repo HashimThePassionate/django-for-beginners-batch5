@@ -1,0 +1,84 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Blog Website{% endblock title %}</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1><a href="{% url 'home' %}">Django Blog</a></h1>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <div class="main-content">
+            {% block content %}
+            Default Content
+            {% endblock content %}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>About Me</h2>
+            <p>Hi, I'm the author of this blog. I love writing about technology, coding, and design. Stay tuned for more updates!</p>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Data Science</a></li>
+            </ul>
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="#">Understanding Django Middleware</a></li>
+                <li><a href="#">How to Use FastAPI for Web Development</a></li>
+                <li><a href="#">Introduction to Machine Learning with Python</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>A blog about coding, technology, and web development. Sharing tips, tutorials, and insights to help you grow as a developer.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Data Science</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Django Blog. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
