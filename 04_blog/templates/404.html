@@ -1,0 +1,18 @@
+<!-- templates/404.html -->
+{% extends 'base.html' %}
+{% block title %}
+404 - Page Not Found
+{% endblock title %}
+
+{% block main %}
+<div class="container" style="text-align: center; padding: 50px;">
+    <h1 style="font-size: 80px; color: #ff6b6b;">404</h1>
+    <h2 style="font-size: 24px; margin-top: 10px;">Oops! Page Not Found</h2>
+    <p style="font-size: 18px; margin-top: 20px;">
+        Sorry, the page you are looking for does not exist. It might have been moved or deleted.
+    </p>
+    <a href="{% url 'blog_list' %}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">
+        Go Back Home
+    </a>
+</div>
+{% endblock main %}

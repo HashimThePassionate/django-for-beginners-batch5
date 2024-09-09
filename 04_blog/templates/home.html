@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block main %}
+<ul style='list-style-type:none'>
+    {% for b in blog %}
+    <li class='link'> <a href="{% url 'blog_detail' b.pk %}">{{b.title}}</a></li><br>
+    <li class='li'>{{b.body}}</li>
+    <pre class='created'>Created by :{{b.author}}</pre>
+    {% endfor %}
+</ul>
+{% endblock main %}

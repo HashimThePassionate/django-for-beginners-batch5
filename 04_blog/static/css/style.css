@@ -1,0 +1,70 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.link a {
+    color: red;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link a:hover {
+    text-decoration-color: red;
+    text-decoration: underline;
+}
+
+.li {
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    font-family: monospace;
+}
+
+.created {
+    font-size: 20px;
+    color: gray;
+    font-weight: 500;
+}
+
+.btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+
+.btn:hover {
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 0;
+    color: #ff6b6b;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 20px;
+}
