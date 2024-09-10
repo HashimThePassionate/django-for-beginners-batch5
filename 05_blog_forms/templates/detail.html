@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Detail Page{% endblock title %}
+{% block main %}
+<ul style='list-style-type:none'>
+    <li class='link'>{{blog.title}}</li><br>
+    <li class='li'>{{blog.body}}</li>
+    <pre class='created'>Created by :{{blog.author}}</pre>
+</ul>
+<a class='btn' href="{% url 'blog_edit' blog.pk %}">+ Edit Blog Post</a>
+<a class='btn' href="{% url 'blog_delete' blog.pk %}"> - Delete </a>
+<a class='btn' href="{% url 'blog_list' %}">Back to Home</a>
+
+
+{% endblock main %}

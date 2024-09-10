@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock title %}
+{% block main %}
+<div class="container">
+    <ul class="blog-list">
+        {% for b in blog %}
+        <li class='blog-item'>
+            <!-- Blog title with link -->
+            <h3 class='link'><a href="{% url 'blog_detail' b.id %}">{{ b.title }}</a></h3>
+            
+            <!-- Blog body content -->
+            <p class='li'>{{ b.body }}</p>
+            
+            <!-- Blog author information -->
+            <pre class='created'>Created by: {{ b.author }}</pre>
+        </li>
+        <hr> <!-- Horizontal line to separate blog posts -->
+        {% endfor %}
+    </ul>
+</div>
+{% endblock main %}

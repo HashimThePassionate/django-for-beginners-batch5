@@ -1,0 +1,298 @@
+/* General body styling */
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    padding: 50px;
+    /* Improved font for readability */
+}
+
+/* Header and navigation styling */
+header {
+    background-color: #fff;
+    /* White background for header */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    display: flex;
+    /* Flexbox for layout */
+    justify-content: space-between;
+    /* Space between left and right navigation */
+    align-items: center;
+    /* Center content vertically */
+    position: sticky;
+    /* Make header sticky */
+    top: 0;
+    /* Stick to the top */
+    z-index: 1000;
+    /* Ensure it is above other content */
+}
+
+/* Navigation left and right styles */
+.nav-left h1,
+.nav-left h1 a {
+    color: #4B0082;
+    /* Indigo color for heading */
+    text-decoration: none;
+    font-size: 40px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-left h1 a:hover {
+    color: #3b007d;
+    /* Slightly darker indigo on hover */
+}
+
+.nav-right a {
+    color: #ffffff;
+    /* White color for text */
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #4B0082;
+    /* Indigo background for button */
+    border: 2px solid #4B0082;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.nav-right a:hover {
+    background-color: #ffffff;
+    /* White background on hover */
+    color: #4B0082;
+    /* Indigo text on hover */
+}
+
+/* Form container styling */
+
+/* Form elements styling */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    /* Padding inside the input */
+    border: 1px solid #ccc;
+    /* Light border */
+    border-radius: 4px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    transition: border-color 0.3s ease;
+    /* Smooth transition for border color */
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    border-color: #ff6b6b;
+    /* Border color on focus */
+    outline: none;
+    /* Remove outline */
+}
+
+/* Submit button styling */
+.form-container input[type="submit"] {
+    background-color: #ff6b6b;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    padding: 12px;
+    /* Padding for the button */
+    border: none;
+    /* No border */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Cursor as pointer */
+    font-size: 18px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold font */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #ff4b4b;
+    /* Slightly darker on hover */
+}
+
+/* Blog post content styling */
+.link a {
+    color: #C21807;
+    /* Bright red color for links */
+    font-size: 24px;
+    /* Font size for links */
+    text-decoration: none;
+    /* Remove underline */
+    font-weight: 700;
+    /* Bold font */
+    transition: color 0.3s ease;
+    /* Smooth transition for hover */
+}
+
+.link a:hover {
+    color: #900000;
+    /* Darker red on hover */
+}
+
+.li {
+    font-size: 18px;
+    /* Font size for body text */
+    font-weight: 400;
+    /* Regular weight */
+    color: #333;
+    /* Darker color for readability */
+    margin: 10px 0;
+    /* Margin around the text */
+    line-height: 1.6;
+    /* Line height for readability */
+}
+
+.created {
+    font-size: 16px;
+    /* Font size for metadata */
+    color: gray;
+    /* Gray color for metadata */
+    font-weight: 500;
+    /* Medium weight */
+    margin-top: 5px;
+    /* Space above created text */
+    font-style: italic;
+    /* Italic style */
+}
+
+/* Button styling */
+.btn {
+    background-color: #4B0082;
+    /* Indigo background color */
+    color: white;
+    /* Text color */
+    padding: 10px 20px;
+    /* Padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    text-decoration: none;
+    /* No underline */
+    font-size: 18px;
+    /* Font size */
+    font-weight: 600;
+    /* Bold font */
+    margin-top: 20px;
+    /* Margin */
+    display: inline-block;
+    /* Display as inline block */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.btn:hover {
+    background-color: white;
+    /* White background on hover */
+    color: #4B0082;
+    /* Indigo text on hover */
+    border: 2px solid #4B0082;
+    /* Indigo border on hover */
+}
+
+/* Unordered list styling */
+ul.blog-list {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove padding */
+    margin: 0 0 30px;
+    /* Margin below list */
+}
+
+hr {
+    border: 1px solid #ddd;
+    /* Horizontal line styling */
+    margin: 20px 0;
+    /* Margin around horizontal line */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px auto;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff4d4d;
+    background-color: #ffe6e6;
+    border: 1px solid #ff4d4d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Alert styling for non-field errors */
+.alert.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Form field focus styling */
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4B0082;
+    outline: none;
+}
+
+/* Submit button styling */
+.btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff4b4b;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Base{% endblock title %}</title>
+</head>
+<body>
+<header>
+        <div class="nav-left">
+            <h1><a href="{% url 'blog_list' %}">Django blog</a></h1>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'blog_create' %}">+ New Blog Post</a>
+        </div>
+</header>
+{% block main %}{% endblock main %}
+</body>
+</html>

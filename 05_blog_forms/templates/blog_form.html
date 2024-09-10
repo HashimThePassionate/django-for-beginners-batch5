@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Create New Blog{% endblock title %}
+{% block main %}
+<div class="form-container">
+    <h1>New Blog Form</h1>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        
+        <!-- Render all non-field errors (form-level errors) -->
+        {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for error in form.non_field_errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <!-- Title Field -->
+        <div class="form-group">
+            <label for="id_title">Title:</label>
+            {{ form.title }} <!-- Input field -->
+            {% if form.title.errors %}
+            <div class="error-message">
+                <ul>
+                    {% for error in form.title.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Body Field -->
+        <div class="form-group">
+            <label for="id_body">Body:</label>
+            {{ form.body }} <!-- Textarea field -->
+            {% if form.body.errors %}
+            <div class="error-message">
+                <ul>
+                    {% for error in form.body.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Author Field -->
+        <div class="form-group">
+            <label for="id_author">Author:</label>
+            {{ form.author }} <!-- Select field -->
+            {% if form.author.errors %}
+            <div class="error-message">
+                <ul>
+                    {% for error in form.author.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+{% endblock main %}

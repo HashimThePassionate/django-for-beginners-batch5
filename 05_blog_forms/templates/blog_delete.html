@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Edit Form{% endblock title %}
+{% block main %}
+<div class="form-container">
+    <h1>Delete Form</h1>
+    <form action="" method='post'>
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ blog.title }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock main %}
