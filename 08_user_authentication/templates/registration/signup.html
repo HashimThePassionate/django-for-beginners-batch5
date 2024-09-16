@@ -1,0 +1,21 @@
+<!-- templates/registration/signup.html -->
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Sign Up{% endblock title %}
+{% block content %}
+    <div class="container-fluid mt-5"> <!-- Full-width container -->
+        <div class="row justify-content-center">
+            <div class="col-12"> <!-- Full width column -->
+                <!-- Sign Up Alert Box -->
+                <div class="alert alert-success shadow p-4 w-100" role="alert"> <!-- Full width alert box -->
+                    <h2 class="alert-heading mb-4 text-center">Sign Up</h2>
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn btn-success w-100 mt-3" type="submit">Sign Up</button> <!-- Full width button -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
