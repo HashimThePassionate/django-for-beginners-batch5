@@ -1,0 +1,22 @@
+<!-- templates/article_delete.html -->
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-center mb-4 text-danger">Delete Article</h2>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <p class="text-center">Are you sure you want to delete "<strong>{{ article.title }}</strong>"?</p>
+                    <div class="text-center">
+                        <button class="btn btn-danger mt-3 w-50" type="submit">Confirm</button>
+                        <a href="{% url 'articles' %}" class="btn btn-outline-secondary mt-3 ms-2 w-50">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+<!-- templates/article_new.html -->
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-center mb-4" style="color: #563d7c;">Create New Article</h2>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-center">
+                        <button class="btn btn-primary mt-3 w-50" type="submit" style="background-color: #563d7c; border-color: #563d7c;">
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

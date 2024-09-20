@@ -1,0 +1,54 @@
+<!-- templates/article_detail.html -->
+
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container mt-5">
+    <div class="article-entry card shadow-sm p-4">
+        <!-- Article Title -->
+        <h2 style="color: #563d7c;">{{ object.title }}</h2>
+        <p class="text-muted">by {{ object.author }} | {{ object.date }}</p>
+        <hr>
+        <p>{{ object.body }}</p>
+    </div>
+
+    <!-- Edit and Delete Buttons (only visible to the author) -->
+    <div class="mt-4">
+        {% if request.user.is_authenticated and request.user.pk == object.author.pk %}
+            <a href="{% url 'article_edit' object.pk %}" class="btn btn-primary" style="background-color: #563d7c; border-color: #563d7c;">Edit</a>
+            <a href="{% url 'article_delete' object.pk %}" class="btn btn-danger ms-2">Delete</a>
+        {% endif %}
+        <p class="mt-4">Back to <a href="{% url 'articles' %}" style="color: #563d7c; text-decoration: none;">All Articles</a>.</p>
+    </div>
+
+    <!-- Comments Section -->
+    <div class="card shadow-sm p-4 mt-5">
+        <h4 style="color: #563d7c;">Comments</h4>
+        <div class="overflow-auto" style="max-height: 300px;">
+            {% if object.comment_set.all %}
+                {% for comment in object.comment_set.all %}
+                    <div class="mb-3">
+                        <p class="fw-bold">{{ comment.author }}</p>
+                        <p>{{ comment.comment }}</p>
+                        <hr>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="text-muted">No comments yet. Be the first to comment!</p>
+            {% endif %}
+        </div>
+    <!-- Add a comment form with theme design -->
+<h4 style="color: #563d7c;">Add a Comment</h4>
+<form action="" method="post" class="mt-4">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="text-center">
+        <button class="btn btn-primary w-50 mt-3" type="submit" style="background-color: #563d7c; border-color: #563d7c;">
+            Save
+        </button>
+    </div>
+</form>
+
+    </div>
+</div>
+{% endblock content %}

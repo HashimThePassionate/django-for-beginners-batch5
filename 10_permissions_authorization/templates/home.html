@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="container mt-5">
+{% if user.is_authenticated %}
+    {% for article in articles %} 
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header" style="background-color: #f5f5fa;">
+            <span class="fw-bold">
+                <a href="{{ article.get_absolute_url }}" style="color: #563d7c; text-decoration: none;">{{article.title}}</a>
+            </span> &middot;
+            <span class="text-muted">by {{article.author}} | {{article.date}}</span>
+        </div>
+        <div class="card-body">
+            <p>{{ article.body }}</p>
+        </div>
+        <div class="card-footer text-center">
+            {% if request.user.is_authenticated and request.user.pk == article.author.pk %}
+            <a href="{% url 'article_edit' article.pk %}" class="btn btn-primary" style="background-color: #563d7c; border-color: #563d7c;">Edit</a>
+            <a href="{% url 'article_delete' article.pk %}" class="btn btn-primary" style="background-color: #563d7c; border-color: #563d7c;">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+        <div class="alert alert-warning shadow-sm" role="alert">
+            <p style="color: #563d7c;">You are not logged in</p>
+        </div>
+        <div class="d-flex gap-3 mt-3">
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary" style="border-color: #563d7c; color: #563d7c;">
+                Log In
+            </a>
+            <a href="{% url 'signup' %}" class="btn btn-primary" style="background-color: #563d7c; border-color: #563d7c;">
+                Sign Up
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

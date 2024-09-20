@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Sign Up{% endblock title %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Sign Up Alert Box -->
+                <div class="alert alert-light shadow-lg p-4" role="alert" style="background-color: #f5f5fa; border-color: #563d7c;">
+                    <h2 class="alert-heading mb-4 text-center" style="color: #563d7c;">Sign Up</h2>
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn btn-primary w-100 mt-3" type="submit" style="background-color: #563d7c; border-color: #563d7c;">
+                            Sign Up
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
